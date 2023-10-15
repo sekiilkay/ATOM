@@ -10,10 +10,11 @@ namespace ATOM.API.Controllers
     public class WreckDemandController : ControllerBase
     {
         private readonly IWreckDemandService _wreckDemandService;
-
-        public WreckDemandController(IWreckDemandService wreckDemandService)
+        private readonly IWreckPopService _wreckPopService;
+        public WreckDemandController(IWreckDemandService wreckDemandService, IWreckPopService wreckPopService)
         {
             _wreckDemandService = wreckDemandService;
+            _wreckPopService = wreckPopService;
         }
 
         [HttpPost]
@@ -33,6 +34,14 @@ namespace ATOM.API.Controllers
                 AverageLatitude = values.AverageLatitude,
                 AverageLongitude = values.AverageLongitude
             });
+        }
+
+        [HttpPost]
+        [Route("test")]
+        public async Task<IActionResult> Test(AddWreckDemandDto addWreckDemandDto)
+        {
+            await _wreckDemandService.Test(addWreckDemandDto);
+            return Ok("Eklendi");
         }
     }
 }

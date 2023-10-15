@@ -17,11 +17,12 @@ namespace ATOM.API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetNearestGatheringCenter(float longitude, float latitude)
+        public async Task<IActionResult> GetNearestGatheringCenter(decimal longitude, decimal latitude)
         {
             var values = await _gatheringCenterService.NearGatheringCenter(longitude, latitude);
             return Ok(new
             {
+                Id = values.Item1.Id,
                 Name = values.Item1.Name,
                 Longitude = values.Item1.Longitude,
                 Latitude = values.Item1.Latitude,

@@ -110,12 +110,42 @@ namespace ATOM.Repository.Repositories
             }
         }
 
-        public async Task<(float AverageLatitude, float AverageLongitude)> AverageWreckLocation()
+        public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation()
         {
-            float averageLatitude = await _dbContext.WreckDemands.AverageAsync(x => x.Latitude);
-            float averageLongitude = await _dbContext.WreckDemands.AverageAsync(x => x.Longitude);
+            decimal averageLatitude = await _dbContext.WreckDemands.AverageAsync(x => x.Latitude);
+            decimal averageLongitude = await _dbContext.WreckDemands.AverageAsync(x => x.Longitude);
 
             return (averageLatitude, averageLongitude);
+        }
+
+        public async Task Test(AddWreckDemandDto wreckDemand)
+        {
+            var district = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == wreckDemand.DistrictName);
+            var districtId = district.Id;
+
+            var wrackPop = await _dbContext.WreckPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtId);
+
+            if (wrackPop == null)
+            {
+                WreckPopulation newWreck = new WreckPopulation
+                {
+                    DistrictId = districtId,
+                    Latitude = wreckDemand.Latitude,
+                    Longitude = wreckDemand.Longitude,
+                    People = 1
+                };
+                await _dbContext.WreckPopulations.AddAsync(newWreck);
+            }
+            else
+            {
+                // Mahalleye ait kayıt var, enlem ve boylamı güncelle
+                wrackPop.Latitude = ((wrackPop.Latitude * wrackPop.People) + wreckDemand.Latitude) / (wrackPop.People + 1);
+                wrackPop.Longitude = ((wrackPop.Longitude * wrackPop.People) + wreckDemand.Longitude) / (wrackPop.People + 1);
+
+                // People sayısını artır
+                wrackPop.People++;
+            }
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

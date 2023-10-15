@@ -12,7 +12,7 @@ namespace ATOM.Core.Repositories
     {
         public Task AddHelpDemand(AddHelpDemandDto helpDemand);
 
-        public Task<(float AverageLatitude, float AverageLongitude)> AverageHelpLocation(int id);
+        public Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageHelpLocation(int id);
 
     }
 }

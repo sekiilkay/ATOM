@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -16,10 +17,13 @@ namespace ATOM.Core.Entities
 
         public int Id { get; set; }
 
-        public float Longitude { get; set; }        //boylam
-        public float Latitude { get; set; }         //enlem
+        [Column(TypeName = "decimal(8,6)")]
+        public decimal Longitude { get; set; }        //boylam
+
+        [Column(TypeName = "decimal(8,6)")]
+        public decimal Latitude { get; set; }         //enlem
         public int DistrictId { get; set; }
-        //public bool IsCanGo { get; set; }
+    
 
         [JsonIgnore]
         public DateTime Date { get; set; }

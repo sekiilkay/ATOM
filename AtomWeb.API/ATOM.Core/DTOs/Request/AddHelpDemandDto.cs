@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -14,13 +16,18 @@ namespace ATOM.Core.DTOs.Request
             this.Date = DateTime.Now;
         }
 
-        public float Longitude { get; set; }        //boylam
-        public float Latitude { get; set; }         //enlem
+        [Column(TypeName = "decimal(8,6)")]
+        public decimal Longitude { get; set; }        //boylam
+
+        [Column(TypeName = "decimal(8,6)")]
+        public decimal Latitude { get; set; }         //enlem
         public string DistrictName { get; set; }
         public string CountyName { get; set; }      //???
 
         [JsonIgnore]
         public DateTime Date { get; set; }
         public int CategoryId { get; set; }
+        public int? HelpCenterId { get; set; }
+        public int? GatheringCenterId { get; set; }
     }
 }

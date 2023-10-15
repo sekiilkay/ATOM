@@ -27,5 +27,6 @@ namespace ATOM.Repository.Context
         public DbSet<WreckDemand> WreckDemands { get; set; }
         public DbSet<CenterType> CenterTypes { get; set; }
         public DbSet<HelpCenterCategories> HelpCenterCategories { get; set; }
+        public DbSet<WreckPopulation> WreckPopulations { get; set; }
     }
 }

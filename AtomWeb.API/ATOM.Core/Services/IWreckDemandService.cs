@@ -11,7 +11,8 @@ namespace ATOM.Core.Services
     public interface IWreckDemandService : IGenericService<WreckDemand>
     {
         public Task AddWreckDemand(AddWreckDemandDto wreckDemand);
-        public Task<(float AverageLatitude, float AverageLongitude)> AverageWreckLocation();
+        public Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation();
+        Task Test(AddWreckDemandDto wreckDemand);
 
     }
 }

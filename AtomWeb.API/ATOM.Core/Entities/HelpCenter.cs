@@ -15,5 +15,9 @@ namespace ATOM.Core.Entities
         [JsonIgnore]
         public ICollection<HelpCenterCategories> HelpCenterCategories { get; set; }
 
+
+        [JsonIgnore]
+        public ICollection<HelpDemand> HelpDemands { get; set; }
+
     }
 }

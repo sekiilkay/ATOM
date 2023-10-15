@@ -11,5 +11,7 @@ namespace ATOM.Core.Entities
 
         public int CategoryId { get; set; }
 
+        public int? GatheringCenterId { get; set; }
+        public int? HelpCenterId { get; set; }
     }
 }

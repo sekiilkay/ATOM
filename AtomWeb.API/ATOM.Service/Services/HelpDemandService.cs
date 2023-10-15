@@ -25,7 +25,7 @@ namespace ATOM.Service.Services
             await _helpDemandRepository.AddHelpDemand(helpDemand);
         }
 
-        public async Task<(float AverageLatitude, float AverageLongitude)> AverageHelpLocation(int id)
+        public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageHelpLocation(int id)
         {
             return await _helpDemandRepository.AverageHelpLocation(id);
         }

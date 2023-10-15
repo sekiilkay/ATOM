@@ -11,7 +11,7 @@ namespace ATOM.Core.Repositories
     public interface IWreckDemandRepository : IGenericRepository<WreckDemand>
     {
         public Task AddWreckDemand(AddWreckDemandDto wreckDemand);
-        public Task<(float AverageLatitude, float AverageLongitude)> AverageWreckLocation();
-
+        public Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation();
+        Task Test(AddWreckDemandDto wreckDemand);
     }
 }

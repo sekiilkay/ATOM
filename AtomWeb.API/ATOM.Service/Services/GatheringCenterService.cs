@@ -19,12 +19,12 @@ namespace ATOM.Service.Services
             _gatheringCenterRepository = gatheringCenterRepository;
         }
 
-        public Task<List<BaseCenter>> ListNearGatheringCenters(float longitude, float latitude)
+        public Task<List<BaseCenter>> ListNearGatheringCenters(decimal longitude, decimal latitude)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<(BaseCenter, float distance)> NearGatheringCenter(float longitude, float latitude)
+        public async Task<(BaseCenter, float distance)> NearGatheringCenter(decimal longitude, decimal latitude)
         {
             return await _gatheringCenterRepository.NearGatheringCenter(longitude, latitude);
         }

@@ -25,9 +25,14 @@ namespace ATOM.Service.Services
             await _wreckDemandRepository.AddWreckDemand(wreckDemand);
         }
 
-        public async Task<(float AverageLatitude, float AverageLongitude)> AverageWreckLocation()
+        public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation()
         {
             return await _wreckDemandRepository.AverageWreckLocation();
+        }
+
+        public async Task Test(AddWreckDemandDto wreckDemand)
+        {
+            await _wreckDemandRepository.Test(wreckDemand);
         }
     }
 }
