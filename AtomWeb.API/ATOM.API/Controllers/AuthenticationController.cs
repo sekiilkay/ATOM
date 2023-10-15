@@ -9,7 +9,7 @@ using System.Text;
 
 namespace ATOM.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {

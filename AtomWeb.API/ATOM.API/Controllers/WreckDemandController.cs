@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ATOM.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class WreckDemandController : ControllerBase
     {
