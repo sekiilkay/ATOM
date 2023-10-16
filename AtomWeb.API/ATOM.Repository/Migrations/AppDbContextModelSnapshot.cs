@@ -267,7 +267,7 @@ namespace ATOM.Repository.Migrations
 
                     b.HasIndex("DistrictId");
 
-                    b.ToTable("HelpPopulation");
+                    b.ToTable("HelpPopulations");
                 });
 
             modelBuilder.Entity("ATOM.Core.Entities.WreckDemand", b =>

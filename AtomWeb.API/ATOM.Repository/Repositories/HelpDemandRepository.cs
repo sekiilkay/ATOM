@@ -62,7 +62,8 @@ namespace ATOM.Repository.Repositories
                         DistrictId = districtId,
                         CategoryId = helpDemand.CategoryId,
                         HelpCenterId = helpDemand.HelpCenterId,
-                        GatheringCenterId =helpDemand.GatheringCenterId  
+                        
+                        GatheringCenterId = helpDemand.GatheringCenterId  
                     };
                     _dbContext.HelpDemands.Add(helpDemands);
                     await _dbContext.SaveChangesAsync();
@@ -128,12 +129,17 @@ namespace ATOM.Repository.Repositories
             return (averageLatitude, averageLongitude);
         }
 
+
+        private async Task Deneme(HelpPopulation helpPopulation)
+        {
+
+        }
         public async Task Test(HelpPopulationDto helpDemand)
         {
             var district = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == helpDemand.DistrictName);
             var districtId = district.Id;
 
-            var helpPop = await _dbContext.HelpPopulation.FirstOrDefaultAsync(x => x.DistrictId == districtId);
+            var helpPop = await _dbContext.HelpPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtId);
 
             if (helpPop == null)
             {
@@ -145,7 +151,7 @@ namespace ATOM.Repository.Repositories
                     Longitude = helpDemand.Longitude,
                     People = 1
                 };
-                await _dbContext.HelpPopulation.AddAsync(newWreck);
+                await _dbContext.HelpPopulations.AddAsync(newWreck);
             }
             else
             {

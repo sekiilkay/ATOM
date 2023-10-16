@@ -16,6 +16,7 @@ namespace ATOM.Core.Entities
         [Column(TypeName = "decimal(8,6)")]
         public decimal Latitude { get; set; }         //enlem
         public int People { get; set; }
+        //public bool IsAveliable { get; set; }
         public int DistrictId { get; set; }
 
         [JsonIgnore]

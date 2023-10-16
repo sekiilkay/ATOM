@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ATOM.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class Create : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -313,6 +313,7 @@ namespace ATOM.Repository.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     GatheringCenterId = table.Column<int>(type: "int", nullable: true),
                     HelpCenterId = table.Column<int>(type: "int", nullable: true),
+                    IsAccessible = table.Column<bool>(type: "bit", nullable: false),
                     Longitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     Latitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     DistrictId = table.Column<int>(type: "int", nullable: false),

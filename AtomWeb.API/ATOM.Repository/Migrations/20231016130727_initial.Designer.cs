@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ATOM.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231016091247_initial")]
+    [Migration("20231016130727_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -221,6 +221,9 @@ namespace ATOM.Repository.Migrations
 
                     b.Property<int?>("HelpCenterId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsAccessible")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Latitude")
                         .HasColumnType("decimal(8,6)");

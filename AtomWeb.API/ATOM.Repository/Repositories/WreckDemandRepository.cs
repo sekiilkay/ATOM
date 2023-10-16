@@ -23,10 +23,6 @@ namespace ATOM.Repository.Repositories
             string districtName = wreckDemand.DistrictName;
             string countyName = wreckDemand.CountyName;
 
-            var districtPopulation = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == districtName);
-            var districtPopulationId = districtPopulation.Id;
-
-            var wrackPop = await _dbContext.WreckPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtPopulationId);
 
             var matchingCounty = _dbContext.Counties.FirstOrDefault(c => c.Name == countyName);
 
@@ -113,7 +109,17 @@ namespace ATOM.Repository.Repositories
                     _dbContext.WreckDemands.Add(wreckDemands);
                     await _dbContext.SaveChangesAsync();
                 }
+
+                await AverageWrackPop(wreckDemand);
             }
+        }
+
+        public async Task AverageWrackPop(AddWreckDemandDto wreckDemand)
+        {
+            var districtPopulation = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == wreckDemand.DistrictName);
+            var districtPopulationId = districtPopulation.Id;
+
+            var wrackPop = await _dbContext.WreckPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtPopulationId);
 
             if (wrackPop == null)
             {
@@ -137,7 +143,7 @@ namespace ATOM.Repository.Repositories
             }
             await _dbContext.SaveChangesAsync();
         }
-
+        
         public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation()
         {
             decimal averageLatitude = await _dbContext.WreckDemands.AverageAsync(x => x.Latitude);

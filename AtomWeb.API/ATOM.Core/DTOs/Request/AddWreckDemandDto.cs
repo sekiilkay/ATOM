@@ -13,6 +13,7 @@ namespace ATOM.Core.DTOs.Request
     {
         public AddWreckDemandDto()
         {
+            CountyName = "";
             this.Date = DateTime.Now;
         }
 

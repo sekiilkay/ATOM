@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ATOM.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231016085124_Create")]
-    partial class Create
+    [Migration("20231016162910_initial3")]
+    partial class initial3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -270,7 +270,7 @@ namespace ATOM.Repository.Migrations
 
                     b.HasIndex("DistrictId");
 
-                    b.ToTable("HelpPopulation");
+                    b.ToTable("HelpPopulations");
                 });
 
             modelBuilder.Entity("ATOM.Core.Entities.WreckDemand", b =>

@@ -28,6 +28,6 @@ namespace ATOM.Repository.Context
         public DbSet<CenterType> CenterTypes { get; set; }
         public DbSet<HelpCenterCategories> HelpCenterCategories { get; set; }
         public DbSet<WreckPopulation> WreckPopulations { get; set; }
-        public DbSet<HelpPopulation> HelpPopulation { get; set; }
+        public DbSet<HelpPopulation> HelpPopulations { get; set; }
     }
 }
