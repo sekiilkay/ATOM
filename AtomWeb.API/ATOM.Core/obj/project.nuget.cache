@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LHdVVg58NXwLDTaXseoPOkHD0pLMlaRzLpRN55kOOJRq1955dkhZVX0T7qyCF/uJ7bAqxM64fC3VEoFFbV0fcw==",
+  "dgSpecHash": "bxwx5RIfrrIylwN3KUAFg/iiYluwtOMEEt4xMawoOgFTfTLChj1caQ1dFxWWilC6Sr7rfeeCkmElSGv9Z84f9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
+  "projectFilePath": "C:\\Users\\sekii\\OneDrive\\Masaüstü\\DisasterTechGitHub\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekii\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.12\\microsoft.aspnetcore.cryptography.internal.7.0.12.nupkg.sha512",
     "C:\\Users\\sekii\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.12\\microsoft.aspnetcore.cryptography.keyderivation.7.0.12.nupkg.sha512",

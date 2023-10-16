@@ -23,6 +23,11 @@ namespace ATOM.Repository.Repositories
             string districtName = wreckDemand.DistrictName;
             string countyName = wreckDemand.CountyName;
 
+            var districtPopulation = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == districtName);
+            var districtPopulationId = districtPopulation.Id;
+
+            var wrackPop = await _dbContext.WreckPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtPopulationId);
+
             var matchingCounty = _dbContext.Counties.FirstOrDefault(c => c.Name == countyName);
 
             if (matchingCounty == null)
@@ -109,28 +114,12 @@ namespace ATOM.Repository.Repositories
                     await _dbContext.SaveChangesAsync();
                 }
             }
-        }
-
-        public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation()
-        {
-            decimal averageLatitude = await _dbContext.WreckDemands.AverageAsync(x => x.Latitude);
-            decimal averageLongitude = await _dbContext.WreckDemands.AverageAsync(x => x.Longitude);
-
-            return (averageLatitude, averageLongitude);
-        }
-
-        public async Task GenerateWreckPopulation(WreckPopulationDto wreckDemand)
-        {
-            var district = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == wreckDemand.DistrictName);
-            var districtId = district.Id;
-
-            var wrackPop = await _dbContext.WreckPopulations.FirstOrDefaultAsync(x => x.DistrictId == districtId);
 
             if (wrackPop == null)
             {
                 WreckPopulation newWreck = new WreckPopulation
                 {
-                    DistrictId = districtId,
+                    DistrictId = districtPopulationId,
                     Latitude = wreckDemand.Latitude,
                     Longitude = wreckDemand.Longitude,
                     People = 1
@@ -147,6 +136,14 @@ namespace ATOM.Repository.Repositories
                 wrackPop.People++;
             }
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation()
+        {
+            decimal averageLatitude = await _dbContext.WreckDemands.AverageAsync(x => x.Latitude);
+            decimal averageLongitude = await _dbContext.WreckDemands.AverageAsync(x => x.Longitude);
+
+            return (averageLatitude, averageLongitude);
         }
     }
 }

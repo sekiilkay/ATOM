@@ -30,10 +30,5 @@ namespace ATOM.Service.Services
         {
             return await _wreckDemandRepository.AverageWreckLocation();
         }
-
-        public async Task GenerateWreckPopulation(WreckPopulationDto wreckDemand)
-        {
-            await _wreckDemandRepository.GenerateWreckPopulation(wreckDemand);
-        }
     }
 }

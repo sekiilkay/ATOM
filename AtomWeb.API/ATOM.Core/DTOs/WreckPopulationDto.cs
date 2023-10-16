@@ -16,5 +16,6 @@ namespace ATOM.Core.DTOs
         [Column(TypeName = "decimal(8,6)")]
         public decimal Latitude { get; set; }         //enlem
         public string DistrictName { get; set; }
+        public string? CountyName { get; set; }
     }
 }

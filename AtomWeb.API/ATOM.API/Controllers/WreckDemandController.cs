@@ -34,13 +34,5 @@ namespace ATOM.API.Controllers
                 AverageLongitude = values.AverageLongitude
             });
         }
-
-        [HttpPost]
-        [Route("GetGenerateWreckPopulation")]
-        public async Task<IActionResult> GetGenerateWreckPopulation(WreckPopulationDto addWreckDemandDto)
-        {
-            await _wreckDemandService.GenerateWreckPopulation(addWreckDemandDto);
-            return Ok();
-        }
     }
 }

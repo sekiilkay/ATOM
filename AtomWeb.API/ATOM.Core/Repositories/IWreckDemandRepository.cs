@@ -13,6 +13,5 @@ namespace ATOM.Core.Repositories
     {
         public Task AddWreckDemand(AddWreckDemandDto wreckDemand);
         public Task<(decimal AverageLatitude, decimal AverageLongitude)> AverageWreckLocation();
-        Task GenerateWreckPopulation(WreckPopulationDto wreckDemand);
     }
 }
