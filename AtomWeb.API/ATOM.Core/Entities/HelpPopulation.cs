@@ -24,5 +24,7 @@ namespace ATOM.Core.Entities
 
         [JsonIgnore]
         public District District { get; set; }
+        public int? GatheringCenterId { get; set; }
+        public int? HelpCenterId { get; set; }
     }
 }

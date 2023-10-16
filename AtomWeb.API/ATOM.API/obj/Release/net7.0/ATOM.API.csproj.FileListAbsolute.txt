@@ -73,7 +73,6 @@ C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\R
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.AssemblyInfoInputs.cache
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.AssemblyInfo.cs
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.csproj.CoreCompileInputs.cache
-C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\staticwebassets\msbuild.ATOM.API.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\staticwebassets\msbuild.build.ATOM.API.props
