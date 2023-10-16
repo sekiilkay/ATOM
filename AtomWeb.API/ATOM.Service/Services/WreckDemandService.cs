@@ -35,5 +35,15 @@ namespace ATOM.Service.Services
         {
             return await _wreckDemandRepository.AverageWreckLocation();
         }
+
+        public void ChangeStatus(int wreckPopId)
+        {
+            _wreckDemandRepository.ChangeStatus(wreckPopId);
+        }
+
+        public async Task<(WreckPopulation, float distance)> GetWreckOperation(string id)
+        {
+            return await _wreckDemandRepository.GetWreckOperation(id);
+        }
     }
 }

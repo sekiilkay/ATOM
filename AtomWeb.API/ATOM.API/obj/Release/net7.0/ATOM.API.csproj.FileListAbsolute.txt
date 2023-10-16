@@ -452,3 +452,7 @@ C:\Users\sekii\Source\Repos\AkbankDisasterTechHackathon\AtomWeb.API\ATOM.API\obj
 C:\Users\sekii\Source\Repos\AkbankDisasterTechHackathon\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.genruntimeconfig.cache
 C:\Users\sekii\Source\Repos\AkbankDisasterTechHackathon\AtomWeb.API\ATOM.API\obj\Release\net7.0\ref\ATOM.API.dll
 C:\Users\sekii\Source\Repos\AkbankDisasterTechHackathon\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\bin\Release\net7.0\Scrutor.dll
+C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\bin\Release\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\bin\Release\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\sekii\OneDrive\Masaüstü\DisasterTechGitHub\AtomWeb.API\ATOM.API\obj\Release\net7.0\ATOM.API.MvcApplicationPartsAssemblyInfo.cs

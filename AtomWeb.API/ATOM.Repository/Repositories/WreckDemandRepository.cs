@@ -151,5 +151,53 @@ namespace ATOM.Repository.Repositories
 
             return (averageLatitude, averageLongitude);
         }
+
+        public void ChangeStatus(int wreckPopId)
+        {
+            var values = _dbContext.WreckPopulations.Find(wreckPopId);
+            if (values != null)
+            {
+                values.IsClaimed = true;
+                _dbContext.SaveChanges();
+            }
+        }
+
+
+
+
+        public async Task<(WreckPopulation, float distance)> GetWreckOperation(string id)
+        {
+            var appUser = await _dbContext.AppUsers.FirstOrDefaultAsync(x => x.Id == id);
+            float distanceKm = 0;
+
+            if (appUser != null)
+            {
+                var nearestWreckPopulation = await _dbContext.WreckPopulations.Where(x => x.IsClaimed == false).Include(x => x.District).ThenInclude(x => x.County)
+                 .OrderBy(wp => Math.Pow((double)appUser.Latitude - (double)wp.Latitude, 2) + Math.Pow((double)appUser.Longitude - (double)wp.Longitude, 2))
+                 .FirstAsync();
+
+                var radius = 6371;
+                var dLat = Deg2Rad((Convert.ToDouble(appUser.Latitude - nearestWreckPopulation.Latitude)));
+                var dLong = Deg2Rad((Convert.ToDouble(appUser.Longitude - nearestWreckPopulation.Longitude)));
+
+                double a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                    Math.Cos(Deg2Rad(Convert.ToDouble(appUser.Latitude))) * Math.Cos(Deg2Rad(Convert.ToDouble(nearestWreckPopulation.Latitude))) *
+                    Math.Sin(dLong / 2) * Math.Sin(dLong / 2);
+
+                double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+                double d = radius * c;
+
+                distanceKm = (float)d;
+
+                return (nearestWreckPopulation, distanceKm);
+            }
+
+            return (null, 0);
+        }
+
+        private double Deg2Rad(double degrees)
+        {
+            return degrees * (Math.PI / 180);
+        }
     }
 }

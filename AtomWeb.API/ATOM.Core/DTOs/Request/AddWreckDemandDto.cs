@@ -26,6 +26,8 @@ namespace ATOM.Core.DTOs.Request
         public string DistrictName { get; set; }
         public string? CountyName { get; set; }      //???
 
+        public bool? IsClaimed { get; set; }
+
         [JsonIgnore]
         public DateTime Date { get; set; }
     }
