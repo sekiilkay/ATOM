@@ -20,6 +20,5 @@ namespace ATOM.Core.Entities
 
         [JsonIgnore]
         public District District { get; set; }
-
     }
 }

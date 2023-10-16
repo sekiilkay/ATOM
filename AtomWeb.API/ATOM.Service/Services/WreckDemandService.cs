@@ -1,4 +1,5 @@
-﻿using ATOM.Core.DTOs.Request;
+﻿using ATOM.Core.DTOs;
+using ATOM.Core.DTOs.Request;
 using ATOM.Core.Entities;
 using ATOM.Core.Repositories;
 using ATOM.Core.Services;
@@ -30,9 +31,9 @@ namespace ATOM.Service.Services
             return await _wreckDemandRepository.AverageWreckLocation();
         }
 
-        public async Task Test(AddWreckDemandDto wreckDemand)
+        public async Task GenerateWreckPopulation(WreckPopulationDto wreckDemand)
         {
-            await _wreckDemandRepository.Test(wreckDemand);
+            await _wreckDemandRepository.GenerateWreckPopulation(wreckDemand);
         }
     }
 }

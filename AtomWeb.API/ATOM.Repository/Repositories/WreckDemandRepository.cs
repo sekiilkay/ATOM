@@ -1,4 +1,5 @@
-﻿using ATOM.Core.DTOs.Request;
+﻿using ATOM.Core.DTOs;
+using ATOM.Core.DTOs.Request;
 using ATOM.Core.Entities;
 using ATOM.Core.Repositories;
 using ATOM.Repository.Context;
@@ -118,7 +119,7 @@ namespace ATOM.Repository.Repositories
             return (averageLatitude, averageLongitude);
         }
 
-        public async Task Test(AddWreckDemandDto wreckDemand)
+        public async Task GenerateWreckPopulation(WreckPopulationDto wreckDemand)
         {
             var district = await _dbContext.Districts.FirstOrDefaultAsync(x => x.Name == wreckDemand.DistrictName);
             var districtId = district.Id;

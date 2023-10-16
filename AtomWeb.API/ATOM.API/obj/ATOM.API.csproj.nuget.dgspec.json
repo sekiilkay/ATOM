@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj": {}
+    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj": {
+    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
+        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
         "projectName": "ATOM.API",
-        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
+        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
         "packagesPath": "C:\\Users\\sekii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.API\\obj\\",
+        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sekii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj": {
-                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj"
+              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj": {
+                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj"
               }
             }
           }
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj": {
+    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
+        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
         "projectName": "ATOM.Core",
-        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
+        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj",
         "packagesPath": "C:\\Users\\sekii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\obj\\",
+        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sekii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -147,14 +147,14 @@
         }
       }
     },
-    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj": {
+    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
         "projectName": "ATOM.Repository",
-        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
+        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
         "packagesPath": "C:\\Users\\sekii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\obj\\",
+        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sekii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -171,8 +171,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj": {
-                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj"
+              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj": {
+                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.CORE\\ATOM.Core.csproj"
               }
             }
           }
@@ -222,14 +222,14 @@
         }
       }
     },
-    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj": {
+    "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj",
+        "projectUniqueName": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj",
         "projectName": "ATOM.Service",
-        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj",
+        "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\ATOM.Service.csproj",
         "packagesPath": "C:\\Users\\sekii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Service\\obj\\",
+        "outputPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sekii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -246,8 +246,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj": {
-                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTech0000\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj"
+              "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj": {
+                "projectPath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechHackathon\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj"
               }
             }
           }

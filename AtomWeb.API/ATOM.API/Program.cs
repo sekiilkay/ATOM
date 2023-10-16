@@ -27,8 +27,6 @@ builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped<IHelpDemandService, HelpDemandService>();
 builder.Services.AddScoped(typeof(IHelpDemandRepository), typeof(HelpDemandRepository));
 
-builder.Services.AddScoped<IWreckPopService, WreckPopService>();
-builder.Services.AddScoped(typeof(IWreckPopRepository), typeof(WreckPopRepository));
 
 builder.Services.AddScoped<IWreckDemandService, WreckDemandService>();
 builder.Services.AddScoped(typeof(IWreckDemandRepository), typeof(WreckDemandRepository));

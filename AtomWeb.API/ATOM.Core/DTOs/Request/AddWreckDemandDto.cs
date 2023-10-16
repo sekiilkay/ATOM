@@ -23,7 +23,6 @@ namespace ATOM.Core.DTOs.Request
         public decimal Latitude { get; set; }         //enlem
 
         public string DistrictName { get; set; }
-        [JsonIgnore]
         public string? CountyName { get; set; }      //???
 
         [JsonIgnore]

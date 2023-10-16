@@ -1,4 +1,5 @@
-﻿using ATOM.Core.DTOs.Request;
+﻿using ATOM.Core.DTOs;
+using ATOM.Core.DTOs.Request;
 using ATOM.Core.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,9 @@ namespace ATOM.API.Controllers
     public class WreckDemandController : ControllerBase
     {
         private readonly IWreckDemandService _wreckDemandService;
-        private readonly IWreckPopService _wreckPopService;
-        public WreckDemandController(IWreckDemandService wreckDemandService, IWreckPopService wreckPopService)
+        public WreckDemandController(IWreckDemandService wreckDemandService)
         {
             _wreckDemandService = wreckDemandService;
-            _wreckPopService = wreckPopService;
         }
 
         [HttpPost]
@@ -37,11 +36,11 @@ namespace ATOM.API.Controllers
         }
 
         [HttpPost]
-        [Route("test")]
-        public async Task<IActionResult> Test(AddWreckDemandDto addWreckDemandDto)
+        [Route("GetGenerateWreckPopulation")]
+        public async Task<IActionResult> GetGenerateWreckPopulation(WreckPopulationDto addWreckDemandDto)
         {
-            await _wreckDemandService.Test(addWreckDemandDto);
-            return Ok("Eklendi");
+            await _wreckDemandService.GenerateWreckPopulation(addWreckDemandDto);
+            return Ok();
         }
     }
 }

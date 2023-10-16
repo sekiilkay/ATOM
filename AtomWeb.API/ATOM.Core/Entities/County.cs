@@ -21,6 +21,5 @@ namespace ATOM.Core.Entities
 
         [JsonIgnore]
         public ICollection<District> Districts { get; set; }
-
     }
 }
