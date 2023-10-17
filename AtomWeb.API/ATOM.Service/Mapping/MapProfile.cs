@@ -15,6 +15,8 @@ namespace ATOM.Service.Mapping
         public MapProfile()
         {
             CreateMap<HelpDemand, AddHelpDemandDto>().ReverseMap();
+            CreateMap<HelpCenter, AddHelpCenterDto>().ReverseMap();
+            CreateMap<HelpCenter, UpdateHelpCenterDto>().ReverseMap();
         }
     }
 }

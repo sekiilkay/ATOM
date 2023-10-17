@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ATOM.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231016162910_initial3")]
-    partial class initial3
+    [Migration("20231017135759_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -255,6 +255,12 @@ namespace ATOM.Repository.Migrations
                     b.Property<int>("DistrictId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("GatheringCenterId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HelpCenterId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Latitude")
                         .HasColumnType("decimal(8,6)");
 
@@ -269,6 +275,10 @@ namespace ATOM.Repository.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("DistrictId");
+
+                    b.HasIndex("GatheringCenterId");
+
+                    b.HasIndex("HelpCenterId");
 
                     b.ToTable("HelpPopulations");
                 });
@@ -310,6 +320,9 @@ namespace ATOM.Repository.Migrations
 
                     b.Property<int>("DistrictId")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("IsClaimed")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Latitude")
                         .HasColumnType("decimal(8,6)");
@@ -538,6 +551,12 @@ namespace ATOM.Repository.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<decimal?>("Latitude")
+                        .HasColumnType("decimal(8,6)");
+
+                    b.Property<decimal?>("Longitude")
+                        .HasColumnType("decimal(8,6)");
+
                     b.HasDiscriminator().HasValue("AppUser");
                 });
 
@@ -632,6 +651,14 @@ namespace ATOM.Repository.Migrations
                         .HasForeignKey("DistrictId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ATOM.Core.Entities.GatheringCenter", null)
+                        .WithMany("HelpPopulation")
+                        .HasForeignKey("GatheringCenterId");
+
+                    b.HasOne("ATOM.Core.Entities.HelpCenter", null)
+                        .WithMany("HelpPopulation")
+                        .HasForeignKey("HelpCenterId");
 
                     b.Navigation("Category");
 
@@ -748,6 +775,8 @@ namespace ATOM.Repository.Migrations
             modelBuilder.Entity("ATOM.Core.Entities.GatheringCenter", b =>
                 {
                     b.Navigation("HelpDemands");
+
+                    b.Navigation("HelpPopulation");
                 });
 
             modelBuilder.Entity("ATOM.Core.Entities.HelpCenter", b =>
@@ -755,6 +784,8 @@ namespace ATOM.Repository.Migrations
                     b.Navigation("HelpCenterCategories");
 
                     b.Navigation("HelpDemands");
+
+                    b.Navigation("HelpPopulation");
                 });
 #pragma warning restore 612, 618
         }

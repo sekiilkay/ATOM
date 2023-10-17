@@ -31,6 +31,8 @@ namespace ATOM.Repository.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Longitude = table.Column<decimal>(type: "decimal(8,6)", nullable: true),
+                    Latitude = table.Column<decimal>(type: "decimal(8,6)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -313,7 +315,6 @@ namespace ATOM.Repository.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     GatheringCenterId = table.Column<int>(type: "int", nullable: true),
                     HelpCenterId = table.Column<int>(type: "int", nullable: true),
-                    IsAccessible = table.Column<bool>(type: "bit", nullable: false),
                     Longitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     Latitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     DistrictId = table.Column<int>(type: "int", nullable: false),
@@ -347,7 +348,7 @@ namespace ATOM.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "HelpPopulation",
+                name: "HelpPopulations",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -356,23 +357,35 @@ namespace ATOM.Repository.Migrations
                     Latitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     People = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    DistrictId = table.Column<int>(type: "int", nullable: false)
+                    DistrictId = table.Column<int>(type: "int", nullable: false),
+                    GatheringCenterId = table.Column<int>(type: "int", nullable: true),
+                    HelpCenterId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HelpPopulation", x => x.Id);
+                    table.PrimaryKey("PK_HelpPopulations", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_HelpPopulation_Categories_CategoryId",
+                        name: "FK_HelpPopulations_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_HelpPopulation_Districts_DistrictId",
+                        name: "FK_HelpPopulations_Districts_DistrictId",
                         column: x => x.DistrictId,
                         principalTable: "Districts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HelpPopulations_GatheringCenters_GatheringCenterId",
+                        column: x => x.GatheringCenterId,
+                        principalTable: "GatheringCenters",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_HelpPopulations_HelpCenters_HelpCenterId",
+                        column: x => x.HelpCenterId,
+                        principalTable: "HelpCenters",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -406,6 +419,7 @@ namespace ATOM.Repository.Migrations
                     Longitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     Latitude = table.Column<decimal>(type: "decimal(8,6)", nullable: false),
                     People = table.Column<int>(type: "int", nullable: false),
+                    IsClaimed = table.Column<bool>(type: "bit", nullable: true),
                     DistrictId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -509,14 +523,24 @@ namespace ATOM.Repository.Migrations
                 column: "HelpCenterId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HelpPopulation_CategoryId",
-                table: "HelpPopulation",
+                name: "IX_HelpPopulations_CategoryId",
+                table: "HelpPopulations",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HelpPopulation_DistrictId",
-                table: "HelpPopulation",
+                name: "IX_HelpPopulations_DistrictId",
+                table: "HelpPopulations",
                 column: "DistrictId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HelpPopulations_GatheringCenterId",
+                table: "HelpPopulations",
+                column: "GatheringCenterId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HelpPopulations_HelpCenterId",
+                table: "HelpPopulations",
+                column: "HelpCenterId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WreckDemands_DistrictId",
@@ -555,7 +579,7 @@ namespace ATOM.Repository.Migrations
                 name: "HelpDemands");
 
             migrationBuilder.DropTable(
-                name: "HelpPopulation");
+                name: "HelpPopulations");
 
             migrationBuilder.DropTable(
                 name: "WreckDemands");
@@ -570,13 +594,13 @@ namespace ATOM.Repository.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
                 name: "GatheringCenters");
 
             migrationBuilder.DropTable(
                 name: "HelpCenters");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Districts");
