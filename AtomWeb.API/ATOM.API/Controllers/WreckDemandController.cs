@@ -63,12 +63,30 @@ namespace ATOM.API.Controllers
         }
 
         [Authorize]
-        [HttpPost]
+        [HttpGet]
         [Route("ChangeOperationStatus")]
         public IActionResult ChangeStatus(int id)
         {
             _wreckDemandService.ChangeStatus(id);
             return Ok();
+        }
+
+
+        [Authorize]
+        [HttpGet]
+        [Route("PeopleLocation")]
+        public async Task<IActionResult> GetPeopleLocation(int wreckId)
+        {
+            return Ok(await _wreckDemandService.GetPeopleLocation(wreckId));
+        }
+
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteWreckPop(int wreckId)
+        {
+            var wreck = await _wreckDemandService.GetByIdAsync(wreckId);
+            _wreckDemandService.Remove(wreck);
+            return Ok("Delete");
         }
     }
 }

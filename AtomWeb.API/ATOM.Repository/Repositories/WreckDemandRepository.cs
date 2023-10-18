@@ -162,6 +162,16 @@ namespace ATOM.Repository.Repositories
             }
         }
 
+        public async Task<List<WreckDemand>> GetPeopleLocation(int wreckId)
+        {
+            var wrecks = await _dbContext.WreckPopulations.FindAsync(wreckId);
+            int distId = wrecks.DistrictId;
+
+            var values = await _dbContext.WreckDemands.Where(x=>x.DistrictId==distId).ToListAsync();
+
+            return values;
+
+        }
 
         public async Task<(WreckPopulation, float distance)> GetWreckOperation(string id)
         {
