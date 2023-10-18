@@ -81,12 +81,13 @@ namespace ATOM.API.Controllers
         }
 
 
+        [Authorize]
         [HttpDelete]
-        public async Task<IActionResult> DeleteWreckPop(int wreckId)
+        [Route("RemovePeopleLocation")]
+        public IActionResult RemoveWreck(int wreckId)
         {
-            var wreck = await _wreckDemandService.GetByIdAsync(wreckId);
-            _wreckDemandService.Remove(wreck);
-            return Ok("Delete");
+            _wreckDemandService.RemoveWreck(wreckId);
+            return Ok();
         }
     }
 }

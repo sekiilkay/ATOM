@@ -165,7 +165,7 @@ namespace ATOM.Repository.Repositories
         public async Task<List<WreckDemand>> GetPeopleLocation(int wreckId)
         {
             var wrecks = await _dbContext.WreckPopulations.FindAsync(wreckId);
-            int distId = wrecks.DistrictId;
+            int distId =wrecks.DistrictId;
 
             var values = await _dbContext.WreckDemands.Where(x=>x.DistrictId==distId).ToListAsync();
 
@@ -196,6 +196,16 @@ namespace ATOM.Repository.Repositories
             }
 
             return (null, 0);
+        }
+
+        public void RemoveWreck(int wreckPopId)
+        {
+            var wrecks =  _dbContext.WreckPopulations.Find(wreckPopId);
+            int distId = wrecks.DistrictId;
+
+            var values = _dbContext.WreckDemands.Where(x => x.DistrictId == distId).ToListAsync();
+
+            _dbContext.Remove(values);
         }
 
         private double CalculateDistance(double lat1, double lon1, double lat2, double lon2)
