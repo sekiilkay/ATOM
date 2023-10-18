@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATOM.Core.Entities
 {
-    public class WreckDemand : AbstractDemand       //Enkaz
+    public class WreckDemand : AbstractDemand  
     {
 
     }

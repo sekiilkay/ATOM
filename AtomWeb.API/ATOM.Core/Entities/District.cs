@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ATOM.Core.Entities
 {
-    public class District : BaseEntity       //Mahalle
+    public class District : BaseEntity   
     {
         public string Name { get; set; }
 

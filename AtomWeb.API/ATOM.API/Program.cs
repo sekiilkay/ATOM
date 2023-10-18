@@ -1,3 +1,5 @@
+using ATOM.API.Extensions;
+using ATOM.API.Modules;
 using ATOM.Core.Repositories;
 using ATOM.Core.Services;
 using ATOM.Core.UnitOfWork;
@@ -6,6 +8,8 @@ using ATOM.Repository.Repositories;
 using ATOM.Repository.UnitOfWork;
 using ATOM.Service.Mapping;
 using ATOM.Service.Services;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,30 +22,11 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
-
-
 // Add services to the container.
 
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(x => x.RegisterModule(new RepoServiceModule()));
 
-
-builder.Services.AddScoped<IHelpDemandService, HelpDemandService>();
-builder.Services.AddScoped(typeof(IHelpDemandRepository), typeof(HelpDemandRepository));
-
-
-builder.Services.AddScoped<IHelpCenterService, HelpCenterService>();
-builder.Services.AddScoped(typeof(IHelpCenterRepository), typeof(HelpCenterRepository));
-
-
-builder.Services.AddScoped<IWreckDemandService, WreckDemandService>();
-builder.Services.AddScoped(typeof(IWreckDemandRepository), typeof(WreckDemandRepository));
-
-
-builder.Services.AddScoped<IGatheringCenterService, GatheringCenterService>();
-builder.Services.AddScoped(typeof(IGatheringCenterRepository), typeof(GatheringCenterRepository));
-
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
 //Db created
@@ -54,9 +39,7 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 });
 
 // For Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>()
-    .AddDefaultTokenProviders();
+builder.Services.AddIdentityExtension();
 
 
 // Adding Authentication

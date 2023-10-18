@@ -9,8 +9,8 @@ namespace ATOM.Core.DTOs.Response
     public class NearHelpCentersDto
     {
         public string Name { get; set; }
-        public float Longitude { get; set; }        //boylam
-        public float Latitude { get; set; }         //enlem
+        public float Longitude { get; set; }   
+        public float Latitude { get; set; }  
 
         public float Distance { get; set; }
         public CategoryDto Category { get; set; }

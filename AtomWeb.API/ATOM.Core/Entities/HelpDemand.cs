@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATOM.Core.Entities
 {
-    public class HelpDemand : AbstractDemand   //Talep
+    public class HelpDemand : AbstractDemand 
     {
         public int CategoryId { get; set; }
 

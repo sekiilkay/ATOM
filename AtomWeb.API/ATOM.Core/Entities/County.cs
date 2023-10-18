@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ATOM.Core.Entities
 {
-    public class County : BaseEntity        //İlçe
+    public class County : BaseEntity    
     {
         public string Name { get; set; }
 

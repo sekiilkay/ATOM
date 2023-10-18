@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "N4R+Iv0PM4hQt6jmNZnN5phPFeVqQ8prNgxw1j+X1yjq/dYa8rNpzxHzs07aKYfT92p/ToyypvwrhG4Z0QZpkw==",
+  "dgSpecHash": "a+P5PmUbfsuLSZtrynpRSYEpFyPgMdmNouli3q9VMRYqOu03OBf171pGJhlKXJobopeXBBXE97Usr1h84I49Jw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekii\\Source\\Repos\\Akbank_DisasterTech_Hackathon_Final\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
+  "projectFilePath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechProject\\AtomWeb.API\\ATOM.API\\ATOM.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sekii\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",
+    "C:\\Users\\sekii\\.nuget\\packages\\autofac.extensions.dependencyinjection\\8.0.0\\autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\sekii\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\sekii\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\sekii\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

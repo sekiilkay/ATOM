@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PtxguifwQskCBfJdZr9JYaPbRLurjC8gq6m6VxvBYi2i0Y0kzTQp9Iv/COgR0MYDAEhoDyELMqOj/jSBRgLvpQ==",
+  "dgSpecHash": "/fwZpgGDg1K4K1oMD5hA8b0FEsuAJBZsQS4mEIYxvFq6DsHmKsL0hFWm77eS5vzrOAMVoNIpbVZq5iAuY8yAlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sekii\\Source\\Repos\\Akbank_DisasterTech_Hackathon_Final\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
+  "projectFilePath": "C:\\Users\\sekii\\Source\\Repos\\AkbankDisasterTechProject\\AtomWeb.API\\ATOM.Repository\\ATOM.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sekii\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\sekii\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

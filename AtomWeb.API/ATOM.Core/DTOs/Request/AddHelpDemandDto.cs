@@ -19,12 +19,12 @@ namespace ATOM.Core.DTOs.Request
         }
 
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Longitude { get; set; }        //boylam
+        public decimal Longitude { get; set; }  
 
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Latitude { get; set; }         //enlem
+        public decimal Latitude { get; set; }   
         public string DistrictName { get; set; }
-        public string CountyName { get; set; }      //???
+        public string CountyName { get; set; }  
 
         [JsonIgnore]
         public DateTime Date { get; set; }

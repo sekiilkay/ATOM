@@ -11,10 +11,10 @@ namespace ATOM.Core.DTOs
     public class WreckPopulationDto
     {
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Longitude { get; set; }        //boylam
+        public decimal Longitude { get; set; }  
 
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Latitude { get; set; }         //enlem
+        public decimal Latitude { get; set; } 
         public string DistrictName { get; set; }
         public string? CountyName { get; set; }
     }

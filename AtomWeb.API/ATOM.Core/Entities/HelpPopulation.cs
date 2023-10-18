@@ -11,10 +11,10 @@ namespace ATOM.Core.Entities
     public class HelpPopulation : BaseEntity
     {
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Longitude { get; set; }        //boylam
+        public decimal Longitude { get; set; }     
 
         [Column(TypeName = "decimal(8,6)")]
-        public decimal Latitude { get; set; }         //enlem
+        public decimal Latitude { get; set; } 
         public int People { get; set; }
         public int CategoryId { get; set; }
         public int DistrictId { get; set; }
